@@ -1,4 +1,4 @@
-Practica 1.2<br>
+Practica 1.3<br>
 Axel Jair Segundo León (AxlSegundo)<br>
 Ximena Yahel Juárez Franco (Xim-Franco)<br>
 Tonantzin Ramírez Tapia (lalandton)<br>
