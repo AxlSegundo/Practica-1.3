@@ -9,7 +9,17 @@ Size.prototype.resize = function(newWidth, newHeight) {
   this.height = Math.max(1, newHeight); // Altura mínima de 1
 };
 
+// Punto 2: Definir la clase Position
+function Position(x = 0, y = 0) {
+  this.x = x;
+  this.y = y;
+}
 
+Position.prototype.move = function(newX, newY) {
+  // Mover la posición, limitando a los bordes de la pantalla
+  this.x = Math.min(ProgramWindow.screenSize.width - ProgramWindow.size.width, Math.max(0, newX));
+  this.y = Math.min(ProgramWindow.screenSize.height - ProgramWindow.size.height, Math.max(0, newY));
+};
 // Punto 3: Definir la clase ProgramWindow
 function ProgramWindow() {
   this.screenSize = new Size(800, 600);
