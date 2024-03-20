@@ -30,12 +30,5 @@ class ProgramWindow {
     this.size = new Size(); // Usa los valores por defecto de Size
     this.position = new Position(); // Usa los valores por defecto de Position
   }
-
-  resize(newSize) { //punto cuatro
-    // Comprobar y ajustar la nueva anchura y altura dentro de los límites permitidos
-    let maxWidth = this.screenSize.width - this.position.x;
-    let maxHeight = this.screenSize.height - this.position.y;
-    this.size.width = Math.max(1, Math.min(newSize.width, maxWidth));
-    this.size.height = Math.max(1, Math.min(newSize.height, maxHeight));
-  }
+  
 }
