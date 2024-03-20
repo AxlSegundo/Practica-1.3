@@ -1,13 +1,15 @@
-// Punto 1: Definir la clase Size
-function Size(width = 80, height = 60) {
-  this.width = width;
-  this.height = height;
-}
+// Punto 1: Definición de la clase Size
+class Size {
+  constructor(width = 80, height = 60) {
+    this.width = width;
+    this.height = height;
+  }
 
-Size.prototype.resize = function(newWidth, newHeight) {
-  this.width = Math.max(1, newWidth); // Ancho mínimo de 1
-  this.height = Math.max(1, newHeight); // Altura mínima de 1
-};
+  resize(newWidth, newHeight) {
+    this.width = newWidth;
+    this.height = newHeight;
+  }
+}
 
 // Punto 2: Definir la clase Position
 function Position(x = 0, y = 0) {
@@ -20,6 +22,7 @@ Position.prototype.move = function(newX, newY) {
   this.x = Math.min(ProgramWindow.screenSize.width - ProgramWindow.size.width, Math.max(0, newX));
   this.y = Math.min(ProgramWindow.screenSize.height - ProgramWindow.size.height, Math.max(0, newY));
 };
+
 // Punto 3: Definir la clase ProgramWindow
 function ProgramWindow() {
   this.screenSize = new Size(800, 600);
