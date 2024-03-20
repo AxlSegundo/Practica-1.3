@@ -23,16 +23,19 @@ Position.prototype.move = function(newX, newY) {
   this.y = Math.min(ProgramWindow.screenSize.height - ProgramWindow.size.height, Math.max(0, newY));
 };
 
-// Punto 3: Definir la clase ProgramWindow
-function ProgramWindow() {
-  this.screenSize = new Size(800, 600);
-  this.size = new Size(); // Tamaño por defecto
-  this.position = new Position(); // Posición por defecto
+// Punto 3: Definición de la clase ProgramWindow
+class ProgramWindow {
+  constructor() {
+    this.screenSize = new Size(800, 600);
+    this.size = new Size(); // Usa los valores por defecto de Size
+    this.position = new Position(); // Usa los valores por defecto de Position
+  }
+
+  resize(newSize) { //punto cuatro
+    // Comprobar y ajustar la nueva anchura y altura dentro de los límites permitidos
+    let maxWidth = this.screenSize.width - this.position.x;
+    let maxHeight = this.screenSize.height - this.position.y;
+    this.size.width = Math.max(1, Math.min(newSize.width, maxWidth));
+    this.size.height = Math.max(1, Math.min(newSize.height, maxHeight));
+  }
 }
-
-// Crear una instancia de ProgramWindow
-let myWindow = new ProgramWindow();
-
-// Prueba para ver si se impriemn los valores por default. Se borrará después.
-console.log("Tamaño por defecto:", myWindow.size.width, myWindow.size.height); // 80 60
-console.log("Posición por defecto:", myWindow.position.x, myWindow.position.y); // 0 0
