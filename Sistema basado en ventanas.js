@@ -24,11 +24,6 @@ class Position {
   }
 }
 
-Position.prototype.move = function(newX, newY) {
-  // Mover la posición, limitando a los bordes de la pantalla
-  this.x = Math.min(ProgramWindow.screenSize.width - ProgramWindow.size.width, Math.max(0, newX));
-  this.y = Math.min(ProgramWindow.screenSize.height - ProgramWindow.size.height, Math.max(0, newY));
-};
 
 // Punto 3: Definición de la clase ProgramWindow
 class ProgramWindow {
