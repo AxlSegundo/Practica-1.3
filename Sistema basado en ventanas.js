@@ -9,10 +9,17 @@ Size.prototype.resize = function(newWidth, newHeight) {
   this.height = Math.max(1, newHeight); // Altura mínima de 1
 };
 
-// Punto 2: Definir la clase Position
-function Position(x = 0, y = 0) {
-  this.x = x;
-  this.y = y;
+// Punto 2: Definición de la clase Position
+class Position { 
+  constructor(x = 0, y = 0) {
+    this.x = x;
+    this.y = y;
+  }
+
+  move(newX, newY) {
+    this.x = newX;
+    this.y = newY;
+  }
 }
 
 Position.prototype.move = function(newX, newY) {
