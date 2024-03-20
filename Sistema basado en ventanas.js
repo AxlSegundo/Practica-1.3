@@ -32,31 +32,10 @@ class ProgramWindow {
     this.size = new Size(); // Usa los valores por defecto de Size
     this.position = new Position(); // Usa los valores por defecto de Position
   }
-
-  move(newPosition) { //punto cinco
-    // Ajustar la nueva posición dentro de los límites permitidos
-    let maxX = this.screenSize.width - this.size.width;
-    let maxY = this.screenSize.height - this.size.height;
-    this.position.x = Math.max(0, Math.min(newPosition.x, maxX));
-    this.position.y = Math.max(0, Math.min(newPosition.y, maxY));
-  }
   
 }
-function changeWindow(window) { //punto seis
-  // Cambiar el tamaño de la ventana
-  window.resize(new Size(400, 300));
-  // Mover la ventana a la nueva posición
-  window.move(new Position(100, 150));
 
-  return window;
-}
 //punto4 practica javascrip
-<<<<<<< HEAD
-class tamano{
-  constructor(ancho,alto){
-      this.ancho=ancho; //guarda el ancho del objeto.
-      this.alto=alto; //guarda el alto del objeto
-=======
 
 class Size { //Punto uno
   constructor(width = 80, height = 60) {
@@ -67,7 +46,6 @@ class Size { //Punto uno
   resize(newWidth, newHeight) {
     this.width = newWidth;
     this.height = newHeight;
->>>>>>> 8d09b813a07a7b48484ef52a89de048d5cd364a0
   }
 }
 
@@ -84,9 +62,6 @@ class Position { //Punto dos
   }
 }
 
-<<<<<<< HEAD
-
-=======
 // Definición de la clase ProgramWindow
 class ProgramWindow { //Punto tres
   constructor() {
@@ -123,7 +98,6 @@ function changeWindow(window) { //punto seis
 }
 
 // Creación y cambio de una ventana de programa
->>>>>>> 8d09b813a07a7b48484ef52a89de048d5cd364a0
 const size = new Size(1080,764);
 console.log(size.width, size.height);
 size.resize(1920,1080);
@@ -142,8 +116,4 @@ const newPosition = new Position(50,100);
 programWindow.move(newPosition);
 console.log(programWindow.position.x,programWindow.position.y);
 changeWindow(programWindow);
-<<<<<<< HEAD
 console.log(programWindow.size.width);
-=======
-console.log(programWindow.size.width);
->>>>>>> 8d09b813a07a7b48484ef52a89de048d5cd364a0
