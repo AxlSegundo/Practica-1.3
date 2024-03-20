@@ -32,11 +32,25 @@ class ProgramWindow {
     this.size = new Size(); // Usa los valores por defecto de Size
     this.position = new Position(); // Usa los valores por defecto de Position
   }
+
+  move(newPosition) { //punto cinco
+    // Ajustar la nueva posición dentro de los límites permitidos
+    let maxX = this.screenSize.width - this.size.width;
+    let maxY = this.screenSize.height - this.size.height;
+    this.position.x = Math.max(0, Math.min(newPosition.x, maxX));
+    this.position.y = Math.max(0, Math.min(newPosition.y, maxY));
+  }
   
 }
+function changeWindow(window) { //punto seis
+  // Cambiar el tamaño de la ventana
+  window.resize(new Size(400, 300));
+  // Mover la ventana a la nueva posición
+  window.move(new Position(100, 150));
 
+  return window;
+}
 //punto4 practica javascrip
-
 class tamano{
   constructor(ancho,alto){
       this.ancho=ancho; //guarda el ancho del objeto.
@@ -78,6 +92,23 @@ class vetana_programa{
   }
 }
 
-const ventana1=new vetana_programa(400,300);
-//redimensiona la ventana 
-ventana1.redimensionoar(new tamano (400, 300));
+
+const size = new Size(1080,764);
+console.log(size.width, size.height);
+size.resize(1920,1080);
+console.log(size.width, size.height);
+const point = new Position();
+console.log(point.x,point.y);
+point.move(100,200);
+console.log(point.x,point.y);
+const programWindow = new ProgramWindow();
+console.log(programWindow.screenSize.width);
+const newSize = new Size(600,400);
+programWindow.resize(newSize);
+console.log(programWindow.size.width);
+console.log(programWindow.size.height);
+const newPosition = new Position(50,100);
+programWindow.move(newPosition);
+console.log(programWindow.position.x,programWindow.position.y);
+changeWindow(programWindow);
+console.log(programWindow.size.width);
